@@ -16,14 +16,12 @@ class CreateAnimalsTable extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-			$table->string('animal_name');
+			$table->string('name');
 			$table->date('date_of_birth');
 			$table->string('description');
 			$table->string('image', 256);
 			$table->enum('availability', ['adopted', 'available'])->default('available');
-			$table->unsignedBigInteger('ownerid')->nullable();
 			
-			$table->foreign('ownerid')->references('id')->on('users');
         });
     }
 
