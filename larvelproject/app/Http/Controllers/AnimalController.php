@@ -64,7 +64,7 @@ class AnimalController extends Controller
 		// create a Animal object and set its values from the input
 		$animal = new Animal;
 		//TODO sort out fields
-		$animal->name = $request->input('name');
+		$animal->animal_name = $request->input('name');
 		$animal->description = $request->input('description');
 		$animal->date_of_birth = $request->input('date_of_birth');
 		$animal->created_at = now();
